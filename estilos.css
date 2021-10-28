@@ -1,0 +1,60 @@
+
+
+body {
+    background-image: url("../imagenes/fondo.jpg");
+    color: #192666;
+    font-family: tahoma;
+    font-size: 85%;
+}
+
+/* *********************** contenedor *************************** */
+
+#contenedor {
+    width: 800px;
+    margin: 0 auto;
+    background: #F2F5FE;
+}
+
+/* *********************** cabecera *************************** */
+
+#cabecera {
+    background: url("../imagenes/cabecera.jpg") no-repeat;
+    color: white;
+    height: 100px;
+}
+
+#cabecera h1 {
+    font-family: arial;
+    padding-left: 20px;
+    padding-top: 24px;
+}
+
+#cabecera a {
+    float: right;
+    padding-top: 24px;
+    overflow: hidden;
+    height: 0px;
+}
+
+#cabecera .inicio {
+    background: url("../imagenes/home.png") no-repeat;
+}
+
+#cabecera .inicio:hover {
+    background: url("../imagenes/home2.png") no-repeat;
+}
+
+
+/* *********************** pie *************************** */
+
+#pie {
+    clear: both;
+    background: url("../imagenes/fondo2.jpg");
+    height: 50px;
+    color: black;
+    font-weight: bold;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-family: arial;
+}
