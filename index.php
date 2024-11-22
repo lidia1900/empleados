@@ -16,20 +16,22 @@ if (isset($_POST['dept'])) {
     echo "hola";
     echo "hola otra vez";
     echo "jey";
+    echo "otra vez";
 } else
     $dept = "";
 ?>
-<div id="bloque" align='center'> 
-    <h3>Operaciones con empleados y departamentos</h3>      
-    <form method="post" action= "index.php"> 
-        <p>Teclea departamento: <input type="number" name="dept" value ="<?php echo $dept ?>" /> 
-            <input type="submit" name="empledep" value="Listar empleados del departamento." /></p>
+<div id="bloque" align='center'>
+    <h3>Operaciones con empleados y departamentos</h3>
+    <form method="post" action="index.php">
+        <p>Teclea departamento: <input type="number" name="dept" value="<?php echo $dept ?>" />
+            <input type="submit" name="empledep" value="Listar empleados del departamento." />
+        </p>
         <p> <input type="submit" name="listardepar" value="Listar departamento, con num emples y media salario." /> </p>
         <p> <input type="submit" name="insertar" value="Insertar Empleado." /> </p>
         <p> <input type="submit" name="modificarborrar" value="Modificar-Borrar Empleado." /> </p>
-    </form> 
+    </form>
 </div>
-<div id="bloque" align='center'> 
+<div id="bloque" align='center'>
     <hr>
     <hr>
     <?php
@@ -56,18 +58,22 @@ if (isset($_POST['dept'])) {
                 while ($fila = $resultado->fetch_assoc()) {
 
                     echo "<tr><td>" . $fila['emp_no'] . "</td><td>" . $fila['apellido'] . "</td><td>" .
-                    $fila['salario'] . "</td><td>" . $fila['oficio'] . "</td><td>" . $fila['fecha_alt'] .
-                    "</td><td>" . $fila['comision'] . "</td><td>" . $fila['dir'] . "</td><td>" . $fila['dept_no'] . "</td>";
-                    ?>
-                    <td><form method="post" action= "index.php"> 
+                        $fila['salario'] . "</td><td>" . $fila['oficio'] . "</td><td>" . $fila['fecha_alt'] .
+                        "</td><td>" . $fila['comision'] . "</td><td>" . $fila['dir'] . "</td><td>" . $fila['dept_no'] . "</td>";
+    ?>
+                    <td>
+                        <form method="post" action="index.php">
                             <input type="hidden" name="emp_no" value="<?php echo $fila['emp_no'] ?>" />
                             <input type="submit" name="borraremp" value="Borrar" />
-                        </form></td>
-                    <td><form method="post" action= "formularioinsertarmodif.php"> 
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="formularioinsertarmodif.php">
                             <input type="hidden" name="emp_no" value="<?php echo $fila['emp_no'] ?>" />
                             <input type="submit" name="modifemple" value="Modificar" />
-                        </form></td>
-                    <?php
+                        </form>
+                    </td>
+    <?php
                     echo "</tr>";
                 }
                 echo "</table>";
@@ -100,8 +106,8 @@ if (isset($_POST['dept'])) {
                             $director = $row2['apellido'];
                         }
                         echo "<tr><td>" . $fila['emp_no'] . "</td><td>" . $fila['apellido'] . "</td><td>" .
-                        $fila['salario'] . "</td><td>" . $fila['oficio'] . "</td><td>" . $fila['fecha_alt'] .
-                        "</td><td>" . $fila['comision'] . "</td><td>" . $fila['dir'] . "</td><td>" . $director . "</td>";
+                            $fila['salario'] . "</td><td>" . $fila['oficio'] . "</td><td>" . $fila['fecha_alt'] .
+                            "</td><td>" . $fila['comision'] . "</td><td>" . $fila['dir'] . "</td><td>" . $director . "</td>";
                         echo "</tr>";
                     }
                     echo "</table>";
@@ -109,7 +115,7 @@ if (isset($_POST['dept'])) {
                 }
             } else
                 echo "<h3>Departamento sin empleados.</h3>";
-        }//if depart
+        } //if depart
         else {
             echo "<h3>El departamento con el código tecleado no existe: " . $dept . "</h3>";
         }
@@ -134,4 +140,3 @@ if (isset($_POST['dept'])) {
 <?php
 include_once 'pie.html';
 ?>
-
