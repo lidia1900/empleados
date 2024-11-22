@@ -11,12 +11,8 @@ include_once 'cabecera.html';
 include_once 'funciones.php';
 if (isset($_POST['dept'])) {
     $dept = $_POST['dept'];
-    echo "esto es una prueba";
-    echo "me saldrá resaltado";
     echo "hola";
-    echo "hola otra vez";
-    echo "jey";
-    echo "otra vez";
+    $i = 98;
 } else
     $dept = "";
 ?>
