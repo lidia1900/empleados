@@ -14,6 +14,8 @@ if (isset($_POST['dept'])) {
     echo "esto es una prueba";
     echo "me saldrá resaltado";
     echo "hola";
+    echo "hola otra vez";
+    echo "jey";
 } else
     $dept = "";
 ?>
